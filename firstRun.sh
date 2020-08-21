@@ -8,7 +8,7 @@ sudo apt install python3-pip -y
 
 sudo chmod +x dual-cli
 
-export PATH=$PATH:dual-cli
+export PATH=$PATH:python3 dual-cli
 
 echo "Script finished."
 
