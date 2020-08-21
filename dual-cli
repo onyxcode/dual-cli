@@ -1,0 +1,53 @@
+import json
+import urllib
+import urllib.request
+import os
+url = "https://api.dual.pw/stats"
+
+def songName(url):
+
+    response = urllib.request.urlopen(url)
+
+    data = response.read().decode("utf-8")
+
+    x = json.loads(data)
+
+    return x['now']['song']
+
+def songArtist(url):
+
+    response = urllib.request.urlopen(url)
+
+    data = response.read().decode("utf-8")
+
+    x = json.loads(data)
+
+    return x['now']['artist']
+
+def DJ(url):
+
+    response = urllib.request.urlopen(url)
+
+    data = response.read().decode("utf-8")
+
+    x = json.loads(data)
+
+    return x['presenter']['username']
+
+def lCount(url):
+
+    response = urllib.request.urlopen(url)
+
+    data = response.read().decode("utf-8")
+
+    x = json.loads(data)
+
+    return x['listeners']['current']
+
+os.system('clear')
+
+print("Loading...\n")
+
+print(f"Welcome to dual-cli, currently serving {lCount(url)} listeners!\n\nCurrent Song: {songName(url)} by {songArtist(url)}\nCurrent DJ: {DJ(url)}")
+
+print("\nListen live at https://dual.pw!")
