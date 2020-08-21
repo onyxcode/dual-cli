@@ -8,10 +8,18 @@ sudo apt install python3-pip -y
 
 sudo chmod +x dual-cli
 
-export PATH=$PATH:python3 dual-cli
+mkdir ~/.dcli
 
-echo "Script finished."
+cp dual-cli ~/.dcli/dual-cli
 
-sleep 2
+echo "" >> ~/.bashrc
 
-python3 dual-cli
+echo "# The following line creates an alias for dual-cli to run." >> ~/.bashrc
+
+echo "alias dual-cli='python3 .dcli/dual-cli'" >> ~/.bashrc
+
+echo "Script finished. Please open a new terminal session and run command 'dual-cli'."
+
+sleep 3
+
+exit
