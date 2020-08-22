@@ -1,8 +1,9 @@
 #!/bin/bash
 
-echo "RUN SCRIPT AS SUDO. PRESS ^C NOW IF YOU ARE NOT RUNNING SCRIPT AS SUDO."
-
-sleep 5
+if [[ $EUID -ne 0 ]]; then
+  echo "Please run as sudo."
+  exit 1
+fi
 
 sudo apt install python3-pip -y
 
