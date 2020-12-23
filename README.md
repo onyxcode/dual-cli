@@ -2,7 +2,7 @@
 
 A Python tool used to show basic stats about [Dual.pw](https://dual.pw).
 
-## Instructions (Ubuntu)
+## Instructions
 - Clone the GitHub repo to your device.
 
   `git clone https://github.com/onyxcode/dual-cli.git`
